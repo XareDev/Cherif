@@ -51,3 +51,30 @@ var typed = new Typed('#About-type', {strings: [
   showCursor: false,
   backSpeed: 60
 });
+
+const overlay = document.querySelectorAll(".card-overlay")
+
+overlay.forEach(e => {
+  e.addEventListener("click", (event) => {
+    var hide_status = e.getAttribute("data-hide")
+    if (hide_status === "false") {
+      e.setAttribute("data-hide", "true")
+    }
+  })
+});
+
+var reset_btn = document.querySelector("#reset-btn")
+reset_btn.addEventListener("click", (event) => {
+  overlay.forEach(e => {
+
+      var hide_status = e.getAttribute("data-hide")
+      if (hide_status === "true") {
+        e.setAttribute("data-hide", "false")
+      }
+      else {
+        console.log(1)
+      }
+    }
+  );
+  }
+)

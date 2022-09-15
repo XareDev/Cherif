@@ -1,10 +1,10 @@
 ::-webkit-scrollbar-thumb {
-	background: #fff;
+	background: #f1f4f4;
 	border-radius: 3px;
 }
 ::-webkit-scrollbar {
 	width: 6px;
-	background: #111010;
+	background: #1b76ff;
 }
 
 * {
@@ -32,7 +32,7 @@ section {
     width: 100%;
 }
 
-li,a,button,p,h1,h2,input,label,textarea,select,option,optgroup,h3 {
+li,a,button,p,h1,h2,input,label,textarea,select,option,optgroup,h3,q,cite {
 	font-family: 'Segoe UI';
 	text-decoration: none;
 }
@@ -57,6 +57,7 @@ header {
 	width: 100%;
 	z-index: 10;
 	transition: all 250ms ease-in-out;
+	z-index: 11;
 }
 
 #logo {
@@ -105,7 +106,7 @@ header {
 	color: var(--navcolorprime);
 }
 
-.nav_links li a:after {
+.nav_links li a::after {
 	content: "";
 	position: absolute;
 	width: 0;
@@ -119,7 +120,7 @@ header {
 	color: var(--navcolor);
 	top: -5px;
 }
-.nav_links li a:hover:after {
+.nav_links li a:hover::after {
 	width: 100%;
 }
 
@@ -171,7 +172,7 @@ header {
 #Home-page-content #header p{
     color: #1b76ff;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
 	margin-bottom: 30px;
 	width: 85%;
 }
@@ -201,13 +202,18 @@ header {
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	background-image: url(bg.jpg);
+	background-repeat: repeat;
 }
 
 #about-content {
+	background-color: hsla(216, 100%, 55%, .35);
+	backdrop-filter: blur(10px);
 	display: flex;
-	height: 90%;
-	width: 80%;
+	height: 70%;
+	width: 60%;
 	padding: 10px;
+	border-radius: 25px;
 }
 
 #about-content #img-container{
@@ -259,13 +265,6 @@ header {
 	color: #e2e4e4;
 }
 
-#bd-wishes {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-}
-
 .section-title {
 	color: var(--headercolor);
 	position: absolute;
@@ -284,7 +283,7 @@ header {
 	font-weight: 700;
 }
 
-.section-title span:after {
+.section-title span::after {
 	content: "";
 	position: absolute;
 	background: var(--spancolor);
@@ -304,4 +303,156 @@ header {
 .odd .section-title {
 	--headercolor: #1665db;
 	--spancolor: #2a7af1;
+}
+
+#bd-wishes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	flex-direction: column;
+}
+
+#card-container {
+	width: 100%;
+	height: 70%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-top: 2.5em;
+}
+
+.card {
+	height: 80%;
+	width: 300px;
+	border-radius: 15px;
+	border: #1b76ff 2px solid;
+	background-color: #f1f4f4;
+	padding: 30px 25px;
+	position: relative;
+	overflow: hidden;
+}
+
+blockquote {
+	padding: 40px 10px 10px 10px;
+	width: 100%;
+}
+
+blockquote q {
+	color: #333;
+	display: block;
+	font-size: 18px;
+	line-height: 1.25em;
+	margin-bottom: 12px;
+	text-align: justify;
+	quotes: "“" "”";
+	font-weight: 500;
+}
+
+blockquote q::before {
+	color: #1b76ff;
+	content: open-quote;
+	font-size: 80px;
+	font-weight: bold;
+	line-height: 120px;
+	left: 10px;
+	top: 5px;
+	position: absolute;
+	width: 80px;
+}
+
+blockquote q::after {
+	content: close-quote;
+}
+
+blockquote cite {
+	color: #999;
+	position: absolute;
+	bottom: 25px;
+	right: 25px;
+	font-weight: 700;
+}
+
+#reset-btn {
+	border-radius: 50px;
+	padding: 9px 18px;
+	font-size: large;
+	background-color: #1b76ff;
+	border: #1b76ff 2px solid;
+	color: #fff;
+	transition: all .25s ease-in-out;
+	cursor:pointer;
+}
+
+#reset-btn:hover {
+	background-color: #fff;
+	color: #1b76ff;
+}
+
+#Our-memories {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.card-overlay {
+	z-index: 10;
+	background-color: rgba(27, 118, 255, 1);
+	backdrop-filter: blur(5px);
+	position: absolute;
+	inset: 0 0 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-overlay[data-hide="true"] {
+	display: none;
+}
+
+
+.card-overlay .overlay-img-circle{
+	width: 125px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: #f1f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.card-overlay .overlay-img-circle img{
+	width: 50%;
+	height: 50%;
+}
+
+.card-overlay h3 {
+	font-size: x-large;
+	font-weight: 800;
+	color: #f1f4f4;
+	margin-bottom: 5px;
+}
+
+.card-overlay p {
+	font-size: small;
+	font-weight: 700;
+	color: #f1f4f4;
+	margin-bottom: 5px;
+}	
+
+footer {
+	width: 100%;
+	padding: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer p{
+	font-size: large;
+	font-weight: bolder;
+	color: #1b76ff;
 }
