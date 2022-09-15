@@ -21,37 +21,6 @@ const sectionOddObserver = new IntersectionObserver(function(entries, sectionOdd
 
 sectionOddObserver.observe(sectionOdd)
 
-var options = {
-  
-
-
-};
-
-var typed = new Typed('#typed-s', {strings: [
-  'Happy Birthday Cherif!!',
-  'Happy Birthday Skander!!',
-  'Have a great day!!'
-  ],  
-  typeSpeed: 60,
-  loop: true,
-  showCursor: false,
-  backSpeed: 60
-});
-
-
-
-var typed = new Typed('#About-type', {strings: [
-  "He's a Pro Gamer!!",
-  "He's a Outaku!!",
-  "He's a Goat!!",
-  "He's Cherif Skander!!"
-  ],  
-  typeSpeed: 60,
-  loop: true,
-  showCursor: false,
-  backSpeed: 60
-});
-
 const overlay = document.querySelectorAll(".card-overlay")
 
 overlay.forEach(e => {
@@ -78,3 +47,19 @@ reset_btn.addEventListener("click", (event) => {
   );
   }
 )
+
+const nav = document.querySelector("nav")
+const hamMenu = document.querySelector(".mobile-nav-toggle")
+
+hamMenu.addEventListener('click', () => {
+	visible = nav.getAttribute("data-visible")
+	expended = hamMenu.getAttribute("data-expanded")
+
+	if (visible === "false") {
+		nav.setAttribute("data-visible", "true")
+		hamMenu.setAttribute("data-expanded", "true")
+	} else if (visible === "true"){
+		nav.setAttribute("data-visible", "false")
+		hamMenu.setAttribute("data-expanded", "false")
+	}
+})

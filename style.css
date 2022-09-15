@@ -456,3 +456,152 @@ footer p{
 	font-weight: bolder;
 	color: #1b76ff;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+	/*  */
+
+	#Home-page-content {
+		flex-direction: column-reverse;
+	}
+
+	#Home-page-content > #img-container {
+		width: 90%;
+	}
+
+	#Home-page-content #header {
+		height: 100%;
+		width: 100%;
+	}
+
+	section {
+		height: 75vh;
+		width: 100%;
+	}
+
+	.nav_items {
+		font-size: 16px;
+			
+	}
+
+	header {
+		justify-content: space-between;
+		padding: 15px 10px;
+		--navcolorprime:#f1f4f4;
+		--navcolor:#fff;
+	}
+
+	.mobile-nav-toggle {
+		position: absolute;
+		z-index: 100;
+		display: block; 
+		background: url("menu-open.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 1.5rem;
+		aspect-ratio: 1;
+		top: 2rem;
+		right:2rem;
+		border: none;
+	}
+
+	nav[data-visible="true"] {
+		transform: translateX(0);
+	}
+
+	.mobile-nav-toggle[data-expanded="true"] {
+		background: url("menu-close.png");
+		background-repeat: no-repeat;
+    	background-size: cover;
+	}
+
+	#about-content #img-container {
+		width: 90%;
+		margin: 0;
+	}
+
+	#about-content #img-container #img {
+		background-color: #f4f4f4;
+		width: 90%;
+		height: 75%;
+		border-radius: 15px;
+	}
+
+	#about-content #text-content h2 {
+		font-size: x-large;
+		margin-bottom: 10px;
+	}
+
+	#card-container {
+		flex-direction: column;
+		height: 80%;
+	}
+
+	.card {
+		margin-bottom: 10px;
+	}
+
+	.section-title {
+		top: 0.5em;
+		left: 1em;
+		font-size: 28px;
+	}
+
+	.section-title span {
+		font-size: 14px;
+		margin-left: 20px;
+		bottom: 20px;
+	}
+
+	#about-content {
+		height: 80%;
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+		scale: .75;
+	}
+
+	#about-content #text-content {
+		width: 100%;
+	}
+
+	.see-more-btn {
+		padding: 7px 14px;
+		font-size: small;
+	}
+
+	#Home-page-content #header h1 {
+		font-size: 28px;
+	}
+
+	nav {
+		position: fixed;
+		inset: 0 0 0 40%;
+		z-index: 99;
+		background-color: rgba(27, 118, 255, .35);
+		flex-direction: column;
+		padding: min(30vh, 10rem) 0.5em;
+		backdrop-filter: blur(1rem);
+		transform: translateX(100%);
+		transition: all 0.5s ease-in-out;
+	}
+
+	nav li {
+		margin-bottom: 0.5em;
+	}
+
+	nav[data-visible="true"] {
+		transform: translateX(0);
+	}
+
+	.mobile-nav-toggle[data-expanded="true"] {
+		background: url("menu-close.png");
+		background-repeat: no-repeat;
+    	background-size: cover;
+	}
+
+	.nav-scrolled {
+		--bgcolor:#1b76ff;
+		
+	}
+
+}
