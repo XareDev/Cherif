@@ -475,7 +475,6 @@ footer p{
 	}
 
 	section {
-		height: 75vh;
 		width: 100%;
 	}
 
@@ -539,6 +538,7 @@ footer p{
 
 	.card {
 		margin-bottom: 10px;
+		padding: 20px;
 	}
 
 	.section-title {
